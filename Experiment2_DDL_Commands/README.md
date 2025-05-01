@@ -167,7 +167,7 @@ foreign key(OrderID) references Orders(OrderID));
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/2d137f94-0e1b-448e-82f0-398fa44297ba)
+![image](https://github.com/user-attachments/assets/c60be602-67da-4c36-ae42-f9c0b8d15fdd)
 
 
 **Question 5**
