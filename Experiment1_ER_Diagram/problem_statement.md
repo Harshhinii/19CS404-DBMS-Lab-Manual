@@ -46,13 +46,9 @@ Design a database for patient management, appointments, medical records, and bil
    - How you modeled prerequisites or billing.
 
 # ER Diagram Submission - Harshini R
-
-## Scenario Chosen:
-Hospital Database
-
+## Scenario Chosen: Hospital Database
 ## ER Diagram:
-![er diagram1](https://github.com/user-attachments/assets/f4018c4c-c5d2-4114-a1c6-d42fcfb80212)
-
+![image](https://github.com/user-attachments/assets/efa115ed-c843-4cb4-9d4c-0673155c2015)
 
 ## Entities and Attributes:
 
