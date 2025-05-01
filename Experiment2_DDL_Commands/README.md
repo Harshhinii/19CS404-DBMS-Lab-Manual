@@ -1,4 +1,5 @@
 # Experiment 2: DDL Commands
+# Name: Harshini R
 
 ## AIM
 To study and implement DDL commands and different types of constraints.
@@ -105,123 +106,159 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/1d5eb1a3-377c-42ea-9cc5-265381c6f9be)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+alter table  Student_details add  State TEXT;
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/56bcf4b2-9091-478b-a6aa-5129aca8ce7f)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/61058056-d04f-4c40-b2f7-a2906f6a0adc)
 
 ```sql
--- Paste your SQL code below for Question 2
+contact_id INTEGER primary key,
+first_name TEXT not NULL,
+last_name  TEXT  not NULL,
+email TEXT,
+phone  TEXT  not NULL check(length(phone)=10));
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/336e971d-6abb-4056-90f9-12c6084c6037)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/0252b04c-8fa7-4dfb-bffa-fccac8c1103e)
 
 ```sql
--- Paste your SQL code below for Question 3
+job_id int primary key,
+job_title text,
+min_salary integer default(8000),
+max_salary int);
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/8af8f499-14e3-4e46-a50b-6aee55ee4b18)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/541e3d04-8b2b-4238-aa47-153148ea09a1)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+InvoiceID INTEGER  primary key,
+InvoiceDate DATE,
+Amount  REAL check(Amount>0),
+DueDate  DATE check(DueDate>InvoiceDate),
+OrderID  INTEGER,
+foreign key(OrderID) references Orders(OrderID));
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/2d137f94-0e1b-448e-82f0-398fa44297ba)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/b2e804fa-8709-44db-b237-da219849b92d)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+alter table Employees add salary INTEGER check(salary>0);
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/f869202d-3af4-4b3f-9779-d66a31ca3b9a)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/d9201f7a-d68d-4c86-a7a0-65e4170ba68e)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+select CustomerID, Name, Address, Email
+from Old_customers;
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/b335dc2a-05bf-4a51-956e-fdc6e7b22616)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/474e2acf-c08e-4784-ae79-7f8f9221fff6)
+
 
 ```sql
--- Paste your SQL code below for Question 7
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/a1d9333b-713b-4db0-9f33-b7ab9e5bc276)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/e546218a-65da-48f0-978d-0046fbbc7fa8)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+TaskID  INTEGER,
+TaskName TEXT,
+DueDate DATE);
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/8580c97f-03cf-4901-a588-515a033f58f3)
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/178810c4-a3a4-41c1-bad9-4436ed87394c)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+OrderID INTEGER primary key,
+OrderDate  DATE not NULL,
+CustomerID INTEGER, 
+foreign key(CustomerID) references Customers(CustomerID));
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/4996d3f1-5ff9-4c87-ba6c-7a14a47b4345)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/b21ac3ba-55c5-485f-8829-3582ffc04a57)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+insert into Employee(EmployeeID,Name,Position,Department,Salary)values(7,'Noah Davis','Manager','HR',60000);
+insert into Employee(EmployeeID,Name,Position,Department)values(8,'Ava Miller','Consultant','IT');
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/dc6f60d0-d0df-47f0-9f08-8fdedd0aa61c)
 
-![Output10](output.png)
+**grade:**
+![image](https://github.com/user-attachments/assets/3747d324-61e6-452c-aa08-cf58c82ba10c)
+
 
 
 ## RESULT
