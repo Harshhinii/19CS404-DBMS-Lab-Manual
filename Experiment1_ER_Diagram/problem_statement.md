@@ -45,28 +45,132 @@ Design a database for patient management, appointments, medical records, and bil
    - Why you chose the entities and relationships.
    - How you modeled prerequisites or billing.
 
-# ER Diagram Submission - Student Name
+# ER Diagram Submission - Harshini R
 
 ## Scenario Chosen:
-University / Hospital (choose one)
+Hospital Database
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![er diagram1](https://github.com/user-attachments/assets/f4018c4c-c5d2-4114-a1c6-d42fcfb80212)
+
 
 ## Entities and Attributes:
-- Entity1: Attributes
-- Entity2: Attributes
-...
+
+PATIENT  
+- PatientID (PK)  
+- FullName  
+- DOB  
+- Gender  
+- PhoneNumber  
+- Address  
+- Email  
+- InsuranceDetails  
+DOCTOR  
+- DoctorID (PK)  
+- FullName  
+- Specialization  
+- PhoneNumber  
+- Email  
+- WorkSchedule  
+
+APPOINTMENT  
+- AppointmentID (PK)  
+- AppointmentDate  
+- AppointmentTime  
+- ReasonForVisit  
+- PatientID (FK)  
+- DoctorID (FK)
+   
+EDICAL_RECORD  
+- MedicalRecordID (PK)  
+- PatientID (FK)  
+- DoctorID (FK)  
+- Diagnoses  
+- PrescribedMedications  
+- Treatments  
+- TestResults  
+- AdditionalNotes  
+
+BILLING  
+- BillingID (PK)  
+- AppointmentID (FK)  
+- Amount  
+- PaymentDate  
+- PaymentMethod  
+- PaymentStatus  
+
+DEPARTMENT  
+- DepartmentID (PK)  
+- DepartmentName  
+- DepartmentHead  
+
+
 
 ## Relationships and Constraints:
-- Relationship1 (Cardinality, Participation)
-- Relationship2 (Cardinality, Participation)
+
+Patient → Appointment = 1 patient, many appointments
+
+Doctor → Appointment = 1 doctor, many appointments
+
+Appointment → Prescription = 1 appointment, many prescriptions
+
+Prescription → Medication = Many prescriptions can have same medication
+
+Patient → Admission = 1 patient, many admissions
+
+Room → Admission = 1 room, many admissions
+
+Doctor → Department = Many doctors in 1 department
+
+Constraints :
+Primary Keys: Uniquely identify each row (PatientID, DoctorID, etc.)
+
+
+Foreign Keys: Link between tables (e.g., Appointment has PatientID)
+
+NOT NULL: Important fields can’t be empty
+
+UNIQUE: For fields like emails or phone numbers
+
+CHECK: Logic rules (like Age > 0, Dates make sense)
+
+DEFAULT: Default values (e.g., Status = ‘Pending’)
 ...
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+
+We modeled the billing process by associating each Admission with a Billing entity.
+
+Each Admission generates a Bill that contains fields such as BillID, TotalAmount, PaidStatus, and PaymentDate.
+
+The Billing table includes a foreign key referencing the AdmissionID, establishing a link between the bill and the corresponding patient admission.
+
+An optional field like PaymentMode (e.g., UPI, Card, Cash) can be included for more detailed tracking.
+
+We also modeled prerequisites for Appointments.
+
+Certain Appointments may require specific prerequisite tests like Blood Test, X-Ray, etc.
+
+These are captured using a separate Prerequisite table that links each AppointmentID with the necessary TestID(s).
+
 
 ## Design Choices:
-Brief explanation of why you chose certain entities, relationships, and assumptions
+
+Entities like Patient, Doctor, Room, Admission, and Prescription were selected to represent core elements in a hospital system.
+
+Appointments and Admissions were treated as separate entities to distinguish between outpatient visits and inpatient admissions.
+
+A separate Medication table allows multiple prescriptions to share the same medication and vice versa, supporting a many-to-many relationship.
+
+Doctors are linked to Departments to reflect their specialization and work area.
+
+Rooms are tied to Admissions to track where patients are accommodated.
+
+Constraints such as Primary Key, Foreign Key, NOT NULL, UNIQUE, CHECK, and DEFAULT ensure data integrity and logical consistency.
+
+All relationship cardinalities are modeled to accurately reflect real-life hospital workflow, like one doctor having many appointments, and one patient having multiple admissions.
+
+
 
 ## RESULT
+A Database to the Hospital management is created succesfully
