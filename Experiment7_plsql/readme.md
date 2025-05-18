@@ -1,3 +1,6 @@
+# Name   : Harshini R
+# REG NO : 212223220033
+
 # Experiment 7: PL/SQL – Variables, Control Structures and Loops
 
 ## AIM
@@ -37,7 +40,7 @@ END;
 **Expected Output:**  
 Greater number is: 80
 
----
+![image](https://github.com/user-attachments/assets/4f1a6deb-084c-47cd-a813-5b74de549b0a)
 
 ## 2. Write a PL/SQL program to Calculate Sum of First N Natural Numbers
 
@@ -50,7 +53,8 @@ Greater number is: 80
 **Expected Output:**  
 Sum of first 10 natural numbers is: 55
 
----
+![image](https://github.com/user-attachments/assets/588d1a24-670f-43f6-97e6-89418a176e77)
+
 
 ## 3. Write a PL/SQL program to generate Fibonacci series
 
@@ -64,7 +68,8 @@ Sum of first 10 natural numbers is: 55
 n = 7  
 Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 
----
+![image](https://github.com/user-attachments/assets/7356393c-5a70-4d86-a143-6d08dd723922)
+
 
 ## 4. Write a PL/SQL Program to display the number in Reverse Order
 
@@ -77,7 +82,8 @@ Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 n = 1535  
 Reversed number is 5351
 
----
+![image](https://github.com/user-attachments/assets/4b7e2bc1-0ff7-4a17-aafc-681e485533da)
+
 
 ## 5. Write a PL/SQL program to find the largest of three numbers
 
@@ -89,6 +95,8 @@ Reversed number is 5351
 **Expected Output:**  
 a = 10, b = 9, c = 15  
 Largest of three number is 15
+
+![image](https://github.com/user-attachments/assets/da8cdc8c-25ba-4dbb-bb68-b94cb91f6540)
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
