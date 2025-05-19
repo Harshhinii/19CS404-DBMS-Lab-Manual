@@ -267,7 +267,7 @@ INNER JOIN
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/5a460978-d05e-4c1f-9a61-47d7b5d05dbe)
 
 **Question 10**
 ---
@@ -292,8 +292,6 @@ WHERE
 **Output:**
 
 ![image](https://github.com/user-attachments/assets/b9c7c8cc-1bc8-423a-aa9e-533e4df00256)
-
-
 
 ## RESULT
 Thus, the SQL queries to implement different types of joins have been executed successfully.
