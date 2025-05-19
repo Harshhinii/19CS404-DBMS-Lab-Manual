@@ -40,163 +40,171 @@ DROP VIEW view_name;
 
 **Question 1**
 --
-![image](https://github.com/user-attachments/assets/0fe75c01-c92b-44f5-b849-8900d1fc716e)
+![image](https://github.com/user-attachments/assets/9e87b687-cd8f-49de-a12a-cc6abef56261)
 
-```sql
-SELECT department_id,department_name from Departments WHERE LENGTH (department_name)> ( SELECT AVG(LENGTH(department_name)) FROM Departments )
+
+```
+
+SELECT name
+FROM customer
+WHERE phone IN (
+    SELECT phone
+    FROM customer
+    GROUP BY phone
+    HAVING COUNT(*) = 1
+);
 ```
 **Output:**
 
-![image](https://github.com/user-attachments/assets/ab21e3a1-a156-4672-a89e-247233375321)
+![image](https://github.com/user-attachments/assets/4bf116ef-823c-43bf-bffd-fdd8985692ec)
+
 
 **Question 2**
----
-Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is greater than $1500.
 
-Sample table: CUSTOMERS
+![image](https://github.com/user-attachments/assets/2f58bc63-6c1f-4c7e-b1b6-20085fc75c04)
 
-ID NAME AGE ADDRESS SALARY
-
-1 Ramesh 32 Ahmedabad 2000 2 Khilan 25 Delhi 1500 3 Kaushik 23 Kota 2000 4 Chaitali 25 Mumbai 6500 5 Hardik 27 Bhopal 8500 6 Komal 22 Hyderabad 4500
-
-7 Muffy 24 Indore 10000
-
-SELECT * FROM CUSTOMERS WHERE SALARY > 1500;
+```
+SELECT *
+FROM CUSTOMERS
+WHERE SALARY > 4500;
+```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/af6bdf67-56df-4a4d-ad32-48513cce4d64)
+![image](https://github.com/user-attachments/assets/487776a6-582e-42ad-81b8-70670d7fa7fc)
 
 **Question 3**
----
-Write a SQL query to Find employees who have an age less than the average age of employees with incomes over 2.5 Lakh
 
-SELECT id,name,age,city,income FROM Employee WHERE age < ( SELECT AVG(age) FROM Employee WHERE income > 250000 );
+![image](https://github.com/user-attachments/assets/0d5a4e87-6da0-4d58-aafe-3ea1e6965ed7)
+
+```
+SELECT *
+FROM CUSTOMERS
+WHERE ADDRESS = 'Delhi';
+```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/6b85db83-becb-4ce4-99ff-4287a248a463)
+![image](https://github.com/user-attachments/assets/34464a28-48a4-47be-b6d1-42dee5f1b71d)
 
 **Question 4**
----
-Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose AGE is LESS than $30
 
-Sample table: CUSTOMERS
+![image](https://github.com/user-attachments/assets/740db1aa-dda1-48d4-8eb9-740aae92e58e)
 
-ID NAME AGE ADDRESS SALARY
-
-1 Ramesh 32 Ahmedabad 2000 2 Khilan 25 Delhi 1500 3 Kaushik 23 Kota 2000 4 Chaitali 25 Mumbai 6500 5 Hardik 27 Bhopal 8500 6 Komal 22 Hyderabad 4500
-
-7 Muffy 24 Indore 10000
-
-SELECT * FROM CUSTOMERS WHERE AGE < 30;
+```
+SELECT *
+FROM CUSTOMERS
+WHERE SALARY < 2500;
+```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/e1adde0d-aa54-4f64-a3b4-eb4684aad03e)
+![image](https://github.com/user-attachments/assets/2ad90826-bec9-4779-8d8e-6ce1a72c43a0)
+
 
 **Question 5**
----
-Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose Address as Delhi
 
-Sample table: CUSTOMERS
+![image](https://github.com/user-attachments/assets/94c8a084-7001-425c-bf63-e0da308e48ce)
 
-ID NAME AGE ADDRESS SALARY
+```
+SELECT 
+    ord_no, 
+    purch_amt, 
+    ord_date, 
+    customer_id, 
+    orders.salesman_id
+FROM 
+    orders
+JOIN 
+    salesman ON orders.salesman_id = salesman.salesman_id
+WHERE 
+    salesman.city = 'London';
 
-1 Ramesh 32 Ahmedabad 2000 2 Khilan 25 Delhi 1500 3 Kaushik 23 Kota 2000 4 Chaitali 25 Mumbai 6500 5 Hardik 27 Bhopal 8500 6 Komal 22 Hyderabad 4500
-
-7 Muffy 24 Indore 10000
-
-SELECT * FROM CUSTOMERS WHERE ADDRESS = 'Delhi';
+```
 **Output:**
 
-![image](https://github.com/user-attachments/assets/ff1e1225-e138-4cab-a319-85199638e584)
+![image](https://github.com/user-attachments/assets/f34ca043-3184-4490-806e-c490bb040674)
 
 **Question 6**
 
-From the following tables write a SQL query to find salespeople who had more than one customer. Return salesman_id and name.
+![image](https://github.com/user-attachments/assets/b7cd803b-e8e6-4234-bc6f-541429f4295e)
 
-salesman table
-
-name type
-
-salesman_id numeric(5) name varchar(30) city varchar(15) commission decimal(5,2)
-
-customer table
-
-name type
-
-customer_id int cust_name text city text grade int salesman_id int
-
-SELECT s.salesman_id, s.name FROM salesman s JOIN customer c ON s.salesman_id = c.salesman_id GROUP BY s.salesman_id, s.name HAVING COUNT(c.customer_id) > 1;
+```
+SELECT *
+FROM CUSTOMERS
+WHERE SALARY > 1500;
+```
 **Output:**
+![image](https://github.com/user-attachments/assets/e8ec7b02-b3c8-4e6f-aaaa-d8d4a14d00c6)
 
-![image](https://github.com/user-attachments/assets/cce3cd31-10c2-48e8-8910-089a042d252f)
 
 **Question 7**
-Write a query to display all the customers whose ID is the difference between the salesperson ID of Mc Lyon and 2001.
 
-salesman table
+![image](https://github.com/user-attachments/assets/bd2259b3-f059-42c3-9cee-0f6e08f85763)
 
-name type
-
-salesman_id numeric(5) name varchar(30) city varchar(15) commission decimal(5,2)
-
-customer table
-
-name type
-
-customer_id int cust_name text city text grade int salesman_id int
-
-SELECT * FROM customer WHERE customer_id = ( SELECT s.salesman_id - 2001 FROM salesman s WHERE s.name = 'Mc Lyon' );
+```
+SELECT *
+FROM customer
+WHERE customer_id = (
+    SELECT salesman_id - 2001
+    FROM salesman
+    WHERE name = 'Mc Lyon'
+);
+```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/3af95ee4-a545-4605-aecf-137cbc388ba2)
-
+![image](https://github.com/user-attachments/assets/e24eaf25-a4cd-4269-8da7-165890e024f2)
 
 **Question 8**
-Write a SQL query to retrieve all columns from the CUSTOMERS table for customers whose salary is greater than $4500.
 
-Sample table: CUSTOMERS
+![image](https://github.com/user-attachments/assets/644740d6-cd80-405d-9839-c10b932c8a67)
 
-ID NAME AGE ADDRESS SALARY
-
-1 Ramesh 32 Ahmedabad 2000 2 Khilan 25 Delhi 1500 3 Kaushik 23 Kota 2000 4 Chaitali 25 Mumbai 6500 5 Hardik 27 Bhopal 8500 6 Komal 22 Hyderabad 4500
-
-7 Muffy 24 Indore 10000
-
-SELECT * FROM CUSTOMERS WHERE SALARY > 4500;
-
+```
+SELECT s.salesman_id, s.name
+FROM salesman s
+JOIN customer c ON s.salesman_id = c.salesman_id
+GROUP BY s.salesman_id, s.name
+HAVING COUNT(c.customer_id) > 1;
+```
 **Output:**
 
-![image](https://github.com/user-attachments/assets/b6609d38-6013-4003-8088-242e94922110)
+![image](https://github.com/user-attachments/assets/37efb837-f6ea-45e6-98d2-0cf54a5b7303)
 
 **Question 9**
-Write a SQL query to Retrieve the names of customers who have a phone number that is not shared with any other customer.
 
-SAMPLE TABLE: customer
+![image](https://github.com/user-attachments/assets/7e8b8005-0fe6-4783-9040-29c0cd45dd9d)
 
-name type
-
-id INTEGER name TEXT city TEXT email TEXT phone INTEGER
-
-SELECT name FROM customer WHERE phone NOT IN ( SELECT phone FROM customer GROUP BY phone HAVING COUNT(*) > 1 );
-
+```
+SELECT *
+FROM customer
+WHERE city <> (
+    SELECT city
+    FROM customer
+    WHERE id = (SELECT MAX(id) FROM customer)
+);
+```
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/ce9b4556-c4ce-4de5-9a91-f9b820bda6bd)
 
 **Question 10**
-Write a SQL query that retrieve all the columns from the table "Grades", where the grade is equal to the maximum grade achieved in each subject.
+![image](https://github.com/user-attachments/assets/63fc42b5-52e6-4a67-be34-8787d0761384)
 
-SELECT * FROM Grades g WHERE grade = ( SELECT MAX(grade) FROM Grades WHERE subject = g.subject GROUP BY subject );
+```
+SELECT student_name,grade
+FROM GRADES
+WHERE grade = (
+    SELECT MAX(grade)
+    FROM GRADES AS g2
+    WHERE g2.subject = GRADES.subject
+);
+
+```
 
 **Output:**
 
-![image](https://github.com/user-attachments/assets/9f21a23c-bc36-4de7-9198-9ce4ad675e92)
-
-
+![image](https://github.com/user-attachments/assets/a6789ed3-f76b-45a3-ab73-ec6d03d0ba48)
 
 ## RESULT
 Thus, the SQL queries to implement subqueries and views have been executed successfully.
